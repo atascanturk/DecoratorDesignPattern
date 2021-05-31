@@ -1,6 +1,6 @@
-﻿using Decorator.Entities.Concrete;
-using Decorator.Lib.Concrete;
-using Decorator.Lib.Decorator;
+﻿using Decorator.DataAccess.Concrete;
+using Decorator.DataAccess.Decorator;
+using Decorator.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;

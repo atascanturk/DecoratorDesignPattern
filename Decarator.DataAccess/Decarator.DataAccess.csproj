@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{48031782-9CCE-4F2E-A4C9-9BC41185F4C3}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>DecoratorApp.UI</RootNamespace>
-    <AssemblyName>DecoratorApp.UI</AssemblyName>
+    <ProjectGuid>{865D79E2-77BA-4B51-AF0A-A5238DF84A80}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Decarator.DataAccess</RootNamespace>
+    <AssemblyName>Decarator.DataAccess</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,26 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Abstract\IRepository.cs" />
+    <Compile Include="Concrete\Repository.cs" />
+    <Compile Include="Decorator\DecoratorRepository.cs" />
+    <Compile Include="Decorator\LoggingRepositoryDecorator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Decarator.DataAccess\Decarator.DataAccess.csproj">
-      <Project>{865D79E2-77BA-4B51-AF0A-A5238DF84A80}</Project>
-      <Name>Decarator.DataAccess</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Decorator.Entities\Decorator.Entities.csproj">
-      <Project>{A415E030-945D-4D59-8410-93FF9229CED7}</Project>
-      <Name>Decorator.Entities</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <Content Include="Images\ConsoleView.png" />
-    <Content Include="Images\DecoratorDesignPattern.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
